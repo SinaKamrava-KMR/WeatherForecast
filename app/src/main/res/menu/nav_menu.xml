@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/menu_showNotification"
+            android:icon="@drawable/ic_notifications"
+            android:title="Notification"
+            app:actionLayout="@layout/action_notification_layout"/>
+        <item
+            android:id="@+id/menu_setting"
+            android:icon="@drawable/ic_settings"
+            android:checkable="true"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/menu_exitToApp"
+            android:icon="@drawable/ic_exit_to_app"
+            android:checkable="true"
+            android:title="Exit"/>
+</menu>

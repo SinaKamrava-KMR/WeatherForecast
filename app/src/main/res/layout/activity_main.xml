@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:background="@color/background"
+    tools:context=".View.Main.MainActivity">
+
+
+  <FrameLayout
+      android:id="@+id/frameLayoutFirst"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/ConstraintLayout_main"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+
+          <FrameLayout
+              android:id="@+id/frameLayout"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+
+              <LinearLayout
+                  android:id="@+id/linearLayout"
+                  android:layout_width="match_parent"
+                  android:layout_height="450dp"
+                  android:orientation="vertical"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+
+                  <ImageView
+
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:adjustViewBounds="true"
+                      android:scaleType="centerCrop"
+                      android:src="@drawable/london_pic1" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/linearLayout2"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:alpha=".8"
+                  android:foreground="@drawable/foreground"
+                  android:orientation="horizontal"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+          </FrameLayout>
+
+          <ImageView
+              android:id="@+id/iv_main_menu"
+              android:layout_width="19dp"
+              android:layout_height="18dp"
+              android:layout_marginStart="24dp"
+              android:layout_marginTop="18dp"
+              app:layout_constraintStart_toStartOf="@+id/frameLayout"
+              app:layout_constraintTop_toTopOf="@+id/frameLayout"
+              app:srcCompat="@drawable/ic_menu" />
+
+          <ImageView
+              android:id="@+id/iv_main_location"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="24dp"
+              app:layout_constraintBottom_toBottomOf="@+id/iv_main_menu"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/iv_main_menu"
+              app:srcCompat="@drawable/ic_location" />
+
+          <TextView
+              android:id="@+id/tv_main_titleWelcome"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:layout_marginTop="32dp"
+              android:fontFamily="@font/rob_light_italic"
+              android:text="@string/title"
+              android:textColor="@color/TextAndIconColor"
+              android:textSize="20sp"
+              app:layout_constraintStart_toStartOf="@+id/iv_main_menu"
+              app:layout_constraintTop_toBottomOf="@+id/iv_main_menu" />
+
+          <TextView
+              android:id="@+id/iv_main_descriptionSearch"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="12dp"
+              android:fontFamily="@font/rob_bold"
+              android:text="@string/des"
+              android:textColor="@color/TextAndIconColor"
+              android:textSize="16sp"
+              app:layout_constraintStart_toStartOf="@+id/tv_main_titleWelcome"
+              app:layout_constraintTop_toBottomOf="@+id/tv_main_titleWelcome" />
+
+          <EditText
+              android:id="@+id/et_main_search"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="16dp"
+              android:background="@drawable/search_background"
+              android:drawableRight="@drawable/ic_search"
+              android:hint="@string/search_city"
+              android:paddingHorizontal="20dp"
+              android:paddingVertical="10dp"
+              android:textSize="15sp"
+              app:layout_constraintEnd_toEndOf="@+id/iv_main_location"
+              app:layout_constraintStart_toStartOf="@+id/iv_main_descriptionSearch"
+              app:layout_constraintTop_toBottomOf="@+id/iv_main_descriptionSearch" />
+
+          <FrameLayout
+              android:id="@+id/frame_main_searchContainer"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:layout_marginTop="4dp"
+              app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/et_main_search" />
+
+          <RelativeLayout
+              android:id="@+id/relative_main_weather_container"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              app:layout_constraintEnd_toEndOf="@+id/et_main_search"
+              app:layout_constraintStart_toStartOf="@+id/et_main_search"
+              app:layout_constraintTop_toBottomOf="@+id/et_main_search">
+
+              <com.airbnb.lottie.LottieAnimationView
+                  android:id="@+id/animationView"
+                  android:layout_width="60dp"
+                  android:layout_height="54dp"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="24dp"
+                  android:adjustViewBounds="true"
+                  android:scaleType="centerCrop"
+                  app:lottie_autoPlay="true"
+                  app:lottie_loop="true"
+                  app:lottie_rawRes="@raw/cloud3" />
+
+              <TextView
+                  android:id="@+id/tv_main_cityName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/animationView"
+                  android:layout_centerHorizontal="true"
+                  android:fontFamily="@font/rob_regular"
+                  android:text="Los Angeles"
+                  android:textColor="@color/TextAndIconColor"
+                  android:textSize="24sp" />
+
+              <TextView
+                  android:id="@+id/tv_main_stateAndDate"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/tv_main_cityName"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="12dp"
+                  android:fontFamily="@font/rob_bold_italic"
+                  android:text="Cloudy , 7:23 am"
+                  android:textColor="@color/TextAndIconColor"
+                  android:textSize="15sp" />
+
+              <TextView
+                  android:id="@+id/tv_main_degree"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/tv_main_stateAndDate"
+                  android:fontFamily="@font/rob_regular"
+                  android:text="23 C"
+                  android:textColor="@color/TextAndIconColor"
+
+                  android:textSize="32sp" />
+
+              <ImageView
+                  android:id="@+id/iv_main_seeMoreDetails"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/tv_main_stateAndDate"
+                  android:layout_alignParentRight="true"
+                  android:layout_marginTop="16dp"
+                  app:srcCompat="@drawable/ic_more" />
+
+              <TextView
+                  android:id="@+id/tv_main_myLocations"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/tv_main_degree"
+                  android:layout_marginTop="24dp"
+                  android:fontFamily="@font/rob_italic"
+                  android:text="My Locations"
+                  android:textColor="@color/TextAndIconColor"
+                  android:textSize="16sp" />
+
+              <androidx.viewpager.widget.ViewPager
+                  android:id="@+id/viewPager2_main"
+                  android:layout_width="match_parent"
+                  android:layout_height="230dp"
+                  android:layout_below="@id/tv_main_myLocations"
+
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="12dp" />
+
+              <me.relex.circleindicator.CircleIndicator
+                  android:id="@+id/indicator"
+                  android:layout_width="match_parent"
+                  android:layout_height="48dp"
+                  android:layout_below="@id/viewPager2_main"
+                  android:layout_centerHorizontal="true" />
+          </RelativeLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+  </FrameLayout>
+
+
+
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigation_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:menu="@menu/nav_menu"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/navigation_header"/>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

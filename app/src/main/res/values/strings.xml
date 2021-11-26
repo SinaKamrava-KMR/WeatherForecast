@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WeatherForecast</string>
+    <string name="title">Welcome To The Weather Forecast</string>
+    <string name="des">Check the weather by the city</string>
+    <string name="search_city">search city</string>
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+</resources>

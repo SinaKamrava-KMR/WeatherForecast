@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pic5">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha=".9"
+        android:foreground="@drawable/foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_showItemsFragment_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circle_shape"
+        android:padding="6dp"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_showItemsFragment_location"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/location2" />
+
+    <RelativeLayout
+        android:id="@+id/relative_showItemsFragment_Container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_showItemsFragment_back">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_showItemsFragment_state"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/stormy" />
+
+        <TextView
+            android:id="@+id/tv_showItemsFragment_cityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/animation_showItemsFragment_state"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/rob_regular"
+            android:text="Tonekabon"
+            android:textColor="@color/TextAndIconColor"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_stateAndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemsFragment_cityName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/rob_bold_italic"
+            android:text="Stormy , 7:23 am"
+            android:textColor="@color/TextAndIconColor"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_showItemFragment_Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_stateAndDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/rob_regular"
+            android:text="Mazandaran ,Tonekabon , Iran"
+            android:textColor="@color/TextAndIconColor"
+            android:textSize="14sp" />
+
+
+        <ImageView
+            android:id="@+id/iv_showItemsFragment_plusOrMinesDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle_shape"
+            app:srcCompat="@drawable/ic_add"
+            android:padding="6dp"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/rob_regular"
+            android:text="23 C"
+            android:textColor="@color/TextAndIconColor"
+            android:textSize="42sp" />
+
+        <TextView
+            android:id="@+id/tv_showItemsFragment_weatherDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weather Details"
+            android:textSize="16sp"
+            android:fontFamily="@font/rob_bold"
+            android:textColor="@color/TextAndIconColor"
+            android:layout_below="@id/tv_showItemFragment_degree"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"/>
+
+
+        <View
+            android:id="@+id/view_showItemFragment_divider"
+            android:layout_width="2dp"
+            android:layout_height="200dp"
+            android:layout_alignStart="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/divider_vertical"/>
+
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_dateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021/9/12"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_cloudyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Cloudy"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_dateText"/>
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_CloudyValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="98%"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_dateValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_WindText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Wind"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_cloudyText"/>
+
+        <TextView
+            android:id="@+id/tv_showItemFragment_WindValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="48 Km/h"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_CloudyValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_humidityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="33 %"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_WindValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_humidityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="humidity"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_WindText"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_pressureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="pressure"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_humidityText"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_pressureValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1025 P"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_humidityValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_sunriseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="sunrise"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_pressureText"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_sunsetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:text="sunset"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:textColor="@color/detail_color"
+            android:layout_below="@id/tv_showItemFragment_sunriseText"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_sunriseValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6:21 am"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_pressureValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+        <TextView
+            android:id="@+id/tv_showItemFragment_sunsetValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:32 pm"
+            android:textColor="@color/detail_color"
+            android:textSize="14sp"
+            android:fontFamily="@font/rob_regular"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_showItemFragment_sunriseValue"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
