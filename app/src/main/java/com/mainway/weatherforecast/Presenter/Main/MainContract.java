@@ -1,5 +1,7 @@
 package com.mainway.weatherforecast.Presenter.Main;
 
+import android.content.Context;
+
 import com.mainway.weatherforecast.Model.Weather;
 import com.mainway.weatherforecast.Presenter.BasePresenter;
 import com.mainway.weatherforecast.Presenter.BaseView;
@@ -13,9 +15,9 @@ public interface MainContract {
 
         void showViewPagerItems(List<Weather> weathers);
 
-        void showSearchResult(Weather weather);
 
-        void showNotificationDialog();
+
+        void showNotificationToast();
 
         void showLocationFragment();
         void showWeatherFragment(Weather weather);
@@ -35,7 +37,7 @@ public interface MainContract {
 
         void broadcastToTime();
 
-        void setNotification();
+        void setNotification(Context context);
         void isDrawerOpen(boolean value);
 
     }

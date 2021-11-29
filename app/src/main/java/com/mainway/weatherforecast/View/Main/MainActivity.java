@@ -1,5 +1,6 @@
 package com.mainway.weatherforecast.View.Main;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,11 +14,14 @@ import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.navigation.NavigationView;
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private CircleIndicator indicator;
     private LottieAnimationView lottieAnimationView;
     private Weather weather = new Weather();
+    public static final String TAG = "getWeather";
 
 
     @Override
@@ -165,6 +170,33 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 return onClickSearch(etSearchCity.getText().toString());
             }
         });
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("WrongConstant")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.menu_showNotification:
+                        mainPresenter.setNotification(MainActivity.this);
+                        Log.i(TAG, "onOptionsItemSelected: ");
+                        break;
+                    case R.id.menu_setting:
+                        Toast.makeText(MainActivity.this, "Click the Setting", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_exitToApp:
+                       finish();
+                        break;
+                    default:
+                        drawerLayout.closeDrawer(Gravity.START);
+                        break;
+
+                }
+
+
+                return true;
+            }
+        });
     }
 
     private boolean onClickSearch(String q) {
@@ -182,14 +214,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         indicator.setViewPager(viewPager);
     }
 
-    @Override
-    public void showSearchResult(Weather weather) {
-
-    }
 
     @Override
-    public void showNotificationDialog() {
-
+    public void showNotificationToast() {
+        Toast.makeText(this, "Show Notification when change time ", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -204,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showWeatherFragment(Weather weather) {
-        if (weather!=null){
+        if (weather != null) {
             Bundle bundle = new Bundle();
             bundle.putParcelable(EXTRA_SEND_DATA_KEY, weather);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -249,4 +277,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void onBackState(List<Weather> weathers) {
         showViewPagerItems(weathers);
     }
+
+
 }

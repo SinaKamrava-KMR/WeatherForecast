@@ -1,5 +1,14 @@
 package com.mainway.weatherforecast.Presenter.Main;
 
+import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.SystemClock;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -9,6 +18,7 @@ import com.mainway.weatherforecast.Model.Weather;
 import com.mainway.weatherforecast.Model.WeatherDao;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import io.reactivex.SingleObserver;
@@ -25,6 +35,7 @@ public class MainPresenter implements MainContract.Presenter {
     private List<Weather> favoriteWeathers = new ArrayList<>();
     private CompositeDisposable disposables = new CompositeDisposable();
     public static final String TAG="getWeather";
+    private Receiver receiver=new Receiver();
 
     public MainPresenter(WeatherDao weatherDao) {
         this.weatherDao = weatherDao;
@@ -45,6 +56,7 @@ public class MainPresenter implements MainContract.Presenter {
         if (disposables.size() > 0) {
             disposables.clear();
         }
+
     }
 
     @Override
@@ -155,10 +167,20 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void broadcastToTime() {
 
+
     }
 
     @Override
-    public void setNotification() {
+    public void setNotification(Context context) {
+
+        Intent alarmIntent=new Intent(context,Receiver.class);
+        PendingIntent pendingIntent=PendingIntent.getBroadcast(context,0,alarmIntent,FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        long time24h = 24*60*60*1000;
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),AlarmManager.INTERVAL_HALF_DAY, pendingIntent);
+
+        Log.i(TAG, "setNotification: ");
+        view.showNotificationToast();
 
     }
 
