@@ -64,8 +64,8 @@
 
           <ImageView
               android:id="@+id/iv_main_menu"
-              android:layout_width="19dp"
-              android:layout_height="18dp"
+              android:layout_width="26dp"
+              android:layout_height="26dp"
               android:layout_marginStart="24dp"
               android:layout_marginTop="18dp"
               app:layout_constraintStart_toStartOf="@+id/frameLayout"
@@ -150,7 +150,7 @@
                   android:scaleType="centerCrop"
                   app:lottie_autoPlay="true"
                   app:lottie_loop="true"
-                  app:lottie_rawRes="@raw/cloud3" />
+                  tools:lottie_rawRes="@raw/cloud3" />
 
               <TextView
                   android:id="@+id/tv_main_cityName"
@@ -159,7 +159,7 @@
                   android:layout_below="@id/animationView"
                   android:layout_centerHorizontal="true"
                   android:fontFamily="@font/rob_regular"
-                  android:text="Los Angeles"
+                  tools:text="Los Angeles"
                   android:textColor="@color/TextAndIconColor"
                   android:textSize="24sp" />
 
@@ -171,7 +171,7 @@
                   android:layout_centerHorizontal="true"
                   android:layout_marginTop="12dp"
                   android:fontFamily="@font/rob_bold_italic"
-                  android:text="Cloudy , 7:23 am"
+                  tools:text="Cloudy , 7:23 am"
                   android:textColor="@color/TextAndIconColor"
                   android:textSize="15sp" />
 
@@ -181,7 +181,7 @@
                   android:layout_height="wrap_content"
                   android:layout_below="@id/tv_main_stateAndDate"
                   android:fontFamily="@font/rob_regular"
-                  android:text="23 C"
+                  tools:text="23 C"
                   android:textColor="@color/TextAndIconColor"
 
                   android:textSize="32sp" />

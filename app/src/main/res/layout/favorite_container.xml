@@ -45,15 +45,16 @@
         android:text="12:43 am"
         android:textColor="@color/TextAndIconColor"
         android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tv_tv_favorite_location_Degree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/rob_bold_italic"
         android:text="-12 C"
         android:textColor="@color/TextAndIconColor"
-        android:textSize="32sp"
-        android:fontFamily="@font/rob_bold_italic"
-        android:layout_centerInParent="true"/>
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/tv_favorite_location_state"

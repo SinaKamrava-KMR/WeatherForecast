@@ -20,6 +20,16 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/iv_showItemsFragment_ISFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_showItemsFragment_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_showItemsFragment_back"
+        app:srcCompat="@drawable/ic_not_favorite" />
+
+    <ImageView
         android:id="@+id/iv_showItemsFragment_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -37,7 +47,7 @@
         android:layout_height="170dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +60,7 @@
         android:id="@+id/relative_showItemsFragment_Container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp"
@@ -90,6 +101,7 @@
             android:text="Stormy , 7:23 am"
             android:textColor="@color/TextAndIconColor"
             android:textSize="15sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_Address"
             android:layout_width="wrap_content"
@@ -151,155 +163,163 @@
             android:id="@+id/tv_showItemFragment_dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/view_showItemFragment_divider"
             android:text="Date"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:layout_toRightOf="@id/view_showItemFragment_divider"
-            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_dateValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="2021/9/12"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemsFragment_weatherDetail"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_showItemFragment_cloudyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_dateText"
             android:layout_marginStart="8dp"
-            android:text="Cloudy"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="Cloudy"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_dateText"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_showItemFragment_CloudyValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_dateValue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="98%"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemFragment_dateValue"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_showItemFragment_WindText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_cloudyText"
             android:layout_marginStart="8dp"
-            android:text="Wind"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="Wind"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_cloudyText"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_showItemFragment_WindValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_CloudyValue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="48 Km/h"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemFragment_CloudyValue"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_humidityValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_WindValue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="33 %"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemFragment_WindValue"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_humidityText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_WindText"
             android:layout_marginStart="8dp"
-            android:text="humidity"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="humidity"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_WindText"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_pressureText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_humidityText"
             android:layout_marginStart="8dp"
-            android:text="pressure"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="pressure"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_humidityText"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_pressureValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_humidityValue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="1025 P"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemFragment_humidityValue"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_sunriseText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_pressureText"
             android:layout_marginStart="8dp"
-            android:text="sunrise"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="sunrise"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_pressureText"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_sunsetText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_showItemFragment_sunriseText"
             android:layout_marginStart="8dp"
-            android:text="sunset"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/view_showItemFragment_divider"
+            android:text="sunset"
             android:textColor="@color/detail_color"
-            android:layout_below="@id/tv_showItemFragment_sunriseText"/>
+            android:textSize="14sp" />
+
         <TextView
             android:id="@+id/tv_showItemFragment_sunriseValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_showItemFragment_pressureValue"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/rob_regular"
             android:text="6:21 am"
             android:textColor="@color/detail_color"
-            android:textSize="14sp"
-            android:fontFamily="@font/rob_regular"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_showItemFragment_pressureValue"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"/>
+            android:textSize="14sp" />
         <TextView
             android:id="@+id/tv_showItemFragment_sunsetValue"
             android:layout_width="wrap_content"
